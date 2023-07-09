@@ -16,7 +16,7 @@ def add_task():
         with open(TODO_FILE, "a") as file:
             file.write(task + "\n")
         entry.delete(0, tk.END)
-        messagebox.showinfo("Task added", f"Task added: {task}")
+        messagebox.showinfo("Task added", "Task added: {task}")
     else:
         messagebox.showwarning("Empty task", "Please enter a task.")
 
@@ -43,7 +43,7 @@ def delete_task():
             with open(TODO_FILE, "w") as file:
                 file.writelines(tasks)
             entry.delete(0, tk.END)
-            messagebox.showinfo("Task deleted", f"Task deleted: {task_num}")
+            messagebox.showinfo("Task deleted", "Task deleted: {task_num}")
         else:
             messagebox.showwarning("Invalid task number", "Invalid task number.")
     except ValueError:
